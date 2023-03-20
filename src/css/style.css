@@ -80,6 +80,7 @@ h1{
     display: flex;
     justify-content: center;
     gap: 14px;
+    align-items: center;
     background: #2D3748;
 }
 
@@ -90,4 +91,73 @@ h1{
 .join-link a{
     text-decoration: none;
     color: #2B6CB0;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .form-side{
+        padding: 10%;
+    }
+
+    h1{
+        font-size: 2.8rem;
+    }
+    
+    .subTitle,
+    .buttons-container button,
+    .join-link{
+        font-size: 1.5rem;
+    }
+
+    .input-box .input{
+        width: 100%;
+        height: 80px;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    main{
+        display: flex;
+        width: 100%;
+    }
+
+    .form-img{
+        width: 50%;
+        height: 100%;
+        background: no-repeat url("../img/side-bg.svg");
+    }
+
+    .form-side{
+        width: 50%;
+        height: 100%;
+    }
+
+    form{
+        min-height: 80%;
+        gap: 30px;
+    }
+
+    h1{
+        font-size: 1.7rem;
+    }
+    
+    .subTitle,
+    .buttons-container button,
+    .join-link{
+        font-size: 1rem;
+    }
+
+    .input-box .input{
+        height: 40px;
+    }
+
+    .buttons-container button{
+        padding: 14px;
+    }
+
+    .join-link{
+        margin-top: 50px;
+    }
 }
