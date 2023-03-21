@@ -4,7 +4,7 @@ A project made during a Fatec Web Development class, for trainning JavaScript. I
 ![readme me-header (1)](https://user-images.githubusercontent.com/71520936/226642439-24469587-fea8-497d-83a9-4196c3582852.svg)
 
 ## Validation
-I used some regEx for validating the email and password inputs:
+I used some regEx to validate the email and password inputs:
 ```
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
