@@ -106,6 +106,56 @@ h1{
     border: 1px solid #e45f48 !important;
 }
 
+/*---------- user.html styles ----------*/
+.user-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 4px 4px 40px #2d374830;
+}
+
+figure{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+figure img{
+    width: 100%;
+    height: 100%;
+}
+
+.user-data{
+    padding: 0 7px;
+    text-align: center;
+}
+
+.user-data h1{
+    font-size: 1.7rem;
+}
+
+.user-data .subTitle{
+    font-weight: 700;
+}
+
+.user-data h3{
+    font-weight: 300;
+    color: rgb(101, 101, 101);
+}
+
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .form-side{
@@ -125,6 +175,31 @@ h1{
     .input-box .input{
         width: 100%;
         height: 80px;
+    }
+
+    /*---------- user.html styles ----------*/
+
+    .data-container{
+        width: 70%;
+        height: 70%;
+        border-radius: 20px;
+    }
+    
+    figure{
+        width: 170px;
+        height: 170px;
+    }
+    
+    .user-data .subTitle{
+        font-size: 1.7rem;
+    }
+
+    .user-data h1{
+        font-size: 2.9rem;
+    }
+    
+    .user-data h3{
+        font-size: 1.8rem;
     }
 
 }
@@ -172,5 +247,36 @@ h1{
 
     .join-link{
         margin-top: 50px;
+    }
+
+    /*---------- user.html styles ----------*/
+
+    .data-container{
+        flex-direction: row;
+        gap: 37px;
+        width: 45%;
+        height: 37%;
+        border-radius: 20px;
+    }
+    
+    figure{
+        width: 120px;
+        height: 120px;
+    }
+
+    .user-data{
+        text-align: start;
+    }
+    
+    .user-data .subTitle{
+        font-size: 1.2rem;
+    }
+
+    .user-data h1{
+        font-size: 2.3rem;
+    }
+    
+    .user-data h3{
+        font-size: 1.7rem;
     }
 }
