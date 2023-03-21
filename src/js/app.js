@@ -1,11 +1,19 @@
 const inputs = document.querySelectorAll("input");
+const email = document.querySelector("#user-email");
+const password = document.querySelector("#user-password");
+const loginForm = document.querySelector("form");
 
-//regex validation
-let emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+//regex
+let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 let passwRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 
 let emailErr = "Por favor chefe, insira um email válido!!!!";
-let passwErr = "A senha deve ter 8 caracteres (maiúsculos, minpusculos e números)";
+let passwErr = "A senha deve ter 8 caracteres (maiúsculos, minúsculos e numéricos)";
+
+//regex validation
+const regexVal = (regex, input) => {
+    return regex.test(input.value);
+}
 
 //focus style event
 const focusIn = (input)=>{
@@ -14,9 +22,9 @@ const focusIn = (input)=>{
     })
 }
 
-//focus out style event
-const focusOut = (input)=>{
-    input.addEventListener("focusout", ()=>{
+//onblur event with focus out style 
+const onBlur = (input)=>{
+    input.addEventListener("blur", ()=>{
         input.classList.remove("focusIn");
 
         if(input.value == "" || input.value == null){
@@ -27,28 +35,42 @@ const focusOut = (input)=>{
     })
 }
 
-//input validation
-const inputValidation = (input, regex, message) =>{
+//input validation style
+const styleValidation = (input, regex, message) =>{
     
     input.addEventListener("input", ()=>{
-        let test = regex.test(input.value);
+        let test = regexVal(regex, input);
 
         test == false ? 
         input.classList.add("inputErr"):
         input.classList.remove("inputErr");
     })  
 
-    input.addEventListener("blur", ()=>{
-        let test = regex.test(input.value);
-        
+    input.addEventListener("focusout", ()=>{
+        let test = regexVal(regex, input);
         if(test == false) alert(message);
     })
 }
 
 inputs.forEach((e) => {
-    focusOut(e);
+    onBlur(e);
     focusIn(e);
 
-    if(e.type == "email") inputValidation(e, emailRegex, emailErr);
-    if(e.type == "password") inputValidation(e, passwRegex, passwErr);
+    let inputType = e.type;
+
+    if(inputType == "email") styleValidation(e, emailRegex, emailErr);
+    if(inputType == "password") styleValidation(e, passwRegex, passwErr);
 });
+
+loginForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+    let emailVal = regexVal(emailRegex, email);
+    let passwVal = regexVal(passwRegex, password);
+
+    if(emailVal && passwVal){
+       window.location.replace("./src/pages/user.html");
+    } else{
+        alert("Tu é burro man?")
+    }
+})
