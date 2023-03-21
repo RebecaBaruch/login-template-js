@@ -69,14 +69,11 @@ inputs.forEach((e) => {
     if(inputType == "password") styleValidation(e, passRegex, passErr);
 });
 
+//submit validation
 loginForm.addEventListener("submit", (e)=>{
     e.preventDefault();
 
-    let emailVal = regexVal(emailRegex, email);
-    let passVal = regexVal(passRegex, password);
-
-    if(emailVal && passVal && 
-       email.value == userData.userEmail &&
+    if(email.value == userData.userEmail &&
        password.value == userData.userPassword){
 
         const user = {
