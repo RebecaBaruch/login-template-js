@@ -11,7 +11,7 @@ const passRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
 ```
 
 ## Logging in
-As it's just for experimentation, you can try to logging in using the following user data:
+As it's just for experimentation, you can try to log in using the following user data:
 ```
 const userData = {
     userEmail: "fredbmuniz@gmail.com",
